@@ -1,4 +1,4 @@
-@extends('user.main')
+@extends('user.dashboard.sellerdashboard')
 <style>
     table {
         justify-content: center;
@@ -34,11 +34,12 @@
 </style>
 
 @section('content')
-    <div class="d-flex flex-row-reverse mt-4  me-5">
+<div style="margin-left: 20%;">
+    <div style="margin-right: 28px;" class="d-flex flex-row-reverse mt-4">
         <a style="background-color: #9BABB8; color:#EEE3CB;" href="/index/create" class="btn">New Product</a>
     </div>
     @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-block mt-3">
+        <div class="alert  alert-block mt-3">
             <strong>{{ $message }}</strong>
         </div>
     @endif
@@ -81,4 +82,5 @@
             </div>
         @endif
     </div>
+</div>
 @endsection

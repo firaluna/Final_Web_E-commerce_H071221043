@@ -1,4 +1,4 @@
-@extends('user.main')
+@extends('user.dashboard.sellerdashboard')
 @section('content')
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
@@ -7,7 +7,7 @@
     @endif
 
     <div class="row justify-content-center">
-        <div class="col-sm-8">
+        <div style="margin-left: 20%;" class="col-sm-8">
             <div class="card p-4 mt-5">
                 <h3>Edit Product</h3>
                 <form method="POST" action="{{ route('update', ['id' => $product->id]) }}" enctype="multipart/form-data">
@@ -72,7 +72,7 @@
                         @endif
                     </div>
 
-                    <button type="submit" class="btn btn-dark mt-4">Edit Product</button>
+                    <button style="background-color: #9BABB8; color:#EEE3CB;" type="submit" class="btn mt-4">Edit Product</button>
                 </form>
             </div>
         </div>

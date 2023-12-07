@@ -1,9 +1,9 @@
 @extends('admin.main')
 
 @section('container')
-    <div class="row justify-content-center">
+    <div  class="row ">
         <div class="col-sm-8">
-            <div class="card p-4 mt-5">
+            <div style="margin-left: 40%;" class="card p-4 mt-5">
                 <form method="POST" action="/product/store" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">

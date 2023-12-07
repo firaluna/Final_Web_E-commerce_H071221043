@@ -17,21 +17,24 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('puser.welcome');
-});
+// Route::get('/', function () {
+//     return view('puser.welcome');
+// });
 
+Route::get('/', [ProductController::class, "Listproduct1"]);
 
 Route::get('index', [ProductController::class, 'index'])->name('index');
 Route::get('products', [ProductController::class, 'products'])->name('products');
 Route::get('produks', [ProductController::class, 'rproduk']);
 Route::get('Listproduct', [ProductController::class, 'Listproduct'])->name('Listproduct');
 Route::get('produk', [ProductController::class, 'produk'])->name('produk');
+Route::get('like', [ProductController::class, 'like']);
+Route::get('cart', [ProductController::class, 'cart'])->name('cart');;
 Route::get('index/create', [ProductController::class, 'create']);
 Route::post('product/store', [ProductController::class, 'store']);
 Route::get('product/{id}/edit', [ProductController::class, 'edit']);
 Route::get('AdminDashboard', [ProductController::class, 'AdminDashboard']);
-// Route::get('sellerdashboard', [ProductController::class, 'sellerdashboard'])->name('sellerdashboard');
+Route::get('sellerdashboard', [ProductController::class, 'sellerdashboard'])->name('sellerdashboard');
 Route::get('buyerdashboard', [ProductController::class, 'buyerdashboard'])->name('buyerdashboard');
 
 Route::put('product/{id}/update', [ProductController::class, 'update'])->name('update');

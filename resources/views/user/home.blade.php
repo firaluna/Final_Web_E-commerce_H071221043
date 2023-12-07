@@ -80,7 +80,7 @@
                         <img src="img/{{ $product->image }}" class="card-img-top" height="100%" />
                         <center>
                             <div class="card-body">
-                                <a href="product/{{ $product->id }}/show">{{ $product->nama }}</a>
+                                <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px;" href="product/{{ $product->id }}/show">{{ $product->nama }}</a>
                                 <p style="color: #EEE3CB">Price: Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                             </div>
                             <div class="card-footer">
@@ -94,7 +94,7 @@
                 </div>
             @endforeach
             <div >
-                <a style="margin-left: 85%; font-size: 18px; margin-bottom: 30px; color:#BBAB8C " href="/index" class="btn">
+                <a style="margin-left: 80%; font-size: 25px; margin-bottom: 30px; color:#BBAB8C " href="/index" class="btn">
                     More Products >>
                 </a>
             </div>

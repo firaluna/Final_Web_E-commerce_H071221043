@@ -86,9 +86,17 @@
                                 <p style="color: #EEE3CB">Price: Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                             </div>
                             <div class="card-footer">
-                                <div  class="d-inline">
-                                    <a style="color: #BBAB8C" href=""><ion-icon size="large" name="heart-outline"></ion-icon></a>
-                                    <a style="color: #BBAB8C" href=""><ion-icon size="large" name="cart-outline"></ion-icon></a>
+                                {{-- <div  class="d-inline">
+                                    <form action="">
+                                        <button  type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="heart-outline"></ion-icon></button>
+                                    </form>
+                                </div> --}}
+
+                                <div class="d-inline">
+                                    <form action="">
+                                        <button onclick="addToCart({{ $product->id }})" type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="cart-outline"></ion-icon></button>
+                                    </form>
+
                                 </div>
                             </div>
                         </center>
@@ -114,5 +122,21 @@
             </div>
         @endif
     </div>
+@endsection
 
+@section('scripts')
+    <script>
+        function addToCart(productId) {
+            // Kirim AJAX request ke endpoint CartController untuk menambahkan produk ke keranjang
+            axios.post('/cart', { product_id: productId })
+                .then(response => {
+                    console.log(response.data);
+                    alert('Produk berhasil ditambahkan ke keranjang!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Gagal menambahkan produk ke keranjang.');
+                });
+        }
+    </script>
 @endsection

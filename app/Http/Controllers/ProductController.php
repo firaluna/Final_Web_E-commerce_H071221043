@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Like;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -13,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('user.index', ['products'=> Product::latest()->get()]);
+        return view('user.dashboard.index', ['products'=> Product::inRandomOrder()->get()]);
     }
 
     public function products()
@@ -23,11 +26,19 @@ class ProductController extends Controller
 
     public function Listproduct()
     {
-        return view('puser.Listproduct', ['products'=> Product::latest()->get()]);
+        $products = Product::inRandomOrder()->get();
+        return view('puser.Listproduct')->with(["products" => $products]);
     }
+
+    public function Listproduct1()
+    {
+        $products = Product::inRandomOrder()->get();
+        return view('puser.welcome')->with(["products" => $products]);
+    }
+
     public function produk()
     {
-        return view('user.produk', ['products'=> Product::latest()->get()]);
+        return view('user.produk', ['products'=> Product::inRandomOrder()->get()]);
     }
 
     public function rproduk()
@@ -41,7 +52,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        return view('user.dashboard.create');
     }
 
     /**
@@ -103,7 +114,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::where('id', $id)->first();
-        return view('user.edit', ['product' => $product]);
+        return view('user.dashboard.edit', ['product' => $product]);
     }
 
     /**
@@ -182,12 +193,35 @@ class ProductController extends Controller
     }
 
     public function sellerdashboard(){
-        return view ('user.sellerdashboard');
+        return view ('user.dashboard.sellerdashboard');
     }
 
     public function buyerdashboard(){
         return view ('buyer.buyerdashboard');
     }
+
+    public function like() {
+        return view ('buyer.like', [
+            'produk' => Like::all()->where('user_id', Auth::user()->id)
+        ]);
+    }
+
+    public function cart(Request $request)
+    {
+    $productId = $request->input('product_id');
+
+    // Logika untuk menambahkan produk ke keranjang (sesuai kebutuhan)
+
+    $cartItem = new Cart([
+
+        'product_id' => $productId,
+        // tambahkan kolom lain yang diperlukan
+    ]);
+
+    $cartItem->save();
+
+    return response()->json(['message' => 'Produk berhasil ditambahkan ke keranjang.']);
+}
 }
 
 

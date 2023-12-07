@@ -52,7 +52,7 @@
                                 <a style="color: #BBAB8C" class="nav-link" href="/like"><ion-icon size="large" name="heart-outline"></ion-icon></a>
                             </li>
                             <li class="nav-item">
-                                <a style="color: #BBAB8C" class="nav-link" href="/cart"><ion-icon size="large" name="cart-outline"></ion-icon></a>
+                                <a style="color: #BBAB8C" class="nav-link" href="{{ route('cart') }}"><ion-icon size="large" name="cart-outline"></ion-icon></a>
                             </li>
                         </ul>
 

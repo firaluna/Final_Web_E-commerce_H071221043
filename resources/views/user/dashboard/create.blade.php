@@ -1,7 +1,7 @@
-@extends('user.main')
+@extends('user.dashboard.sellerdashboard')
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-sm-8">
+        <div style="margin-left: 20%;" class="col-sm-8">
             <div class="card p-4 mt-5">
                 <form method="POST" action="/product/store" enctype="multipart/form-data">
                     @csrf

@@ -23,8 +23,8 @@
 
     table {
         text-align: justify;
-        margin-top: 20px;
-        margin-left: 13%;
+        /* margin-top: 5px; */
+        /* margin-left: 13%; */
         /* font-family: sans-serif; */
     }
 </style>
@@ -37,7 +37,7 @@
     <div class="container">
         <center>
             <div class="row justify-content-center">
-                <div class="col-sm-6 mb-5">
+                <div class="col-sm-8 mb-5">
                     <div style="height: 100%; background-color:#9BABB8" class="card p-4 mb-7" >
                         <img src="/img/{{ $product->image }}" width="250px" height="50%">
                         <table>

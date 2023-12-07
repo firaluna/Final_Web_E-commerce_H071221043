@@ -33,7 +33,12 @@
     Mari temukan furnitur impian Anda dan wujudkan ruang hunian yang Anda idamkan bersama kami.</p>
     </div>
 
-    {{-- <style>
+    <div  class="text-center">
+        <p style="color:#BBAB8C">Our Products</p>
+        <h2 style="font-family: sans-serif; color:#BBAB8C;" class="fw-medium">TRENDING PRODUCT</h2>
+    </div>
+
+    <style>
         table {
             justify-content: center;
             align-items: center;
@@ -78,7 +83,7 @@
                         <img src="img/{{ $product->image }}" class="card-img-top" height="100%" />
                         <center>
                             <div class="card-body">
-                                <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px;" href="product/{{ $product->id }}/detail">{{ $product->nama }}</a>
+                                <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px;" href="product/{{ $product->id }}/pdetail">{{ $product->nama }}</a>
                                 <p style="color: #EEE3CB">Price: Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                             </div>
                             <div class="card-footer">
@@ -91,8 +96,8 @@
                     </div>
                 </div>
             @endforeach
-            <div class="more">
-                <a style="margin-left:85%; font-size:30px;" href="/products"> More Products >></a>
+            <div class="mb-4">
+                <a style="margin-left:83%; font-size:25px;color:#BBAB8C" href="/Listproduct"> More Products >></a>
             </div>
         @else
             <div class="col-md-12">
@@ -103,7 +108,7 @@
                 </div>
             </div>
         @endif
-    </div> --}}
+    </div>
 
 
 @endsection
