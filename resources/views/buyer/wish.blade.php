@@ -61,10 +61,6 @@
                 More Products >>
             </a>
         </div>
-        {{-- <div class="justify-content-center">
-            <a style="margin-left: 44%; font-size: 15px; margin-bottom: 20px; border: 1px solid #9BABB8; box-shadow:  0 0 4px #9BABB8; text-decoration: none; transition: background-color 0.3s ease, color 0.3s ease;"  href="/products" class="btn">
-                More Products</a>
-        </div> --}}
     @else
         <div class="col-md-12">
             <div class="card">

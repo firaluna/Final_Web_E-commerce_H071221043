@@ -197,31 +197,87 @@ class ProductController extends Controller
     }
 
     public function buyerdashboard(){
-        return view ('buyer.buyerdashboard');
+        return view ('buyer.dashboard.buyerdashboard');
     }
 
-    public function like() {
-        return view ('buyer.like', [
-            'produk' => Like::all()->where('user_id', Auth::user()->id)
-        ]);
-    }
+    // public function wish(Request $request)
+    // {
+    //     Wishlist::create([
+    //         'user_id' => auth()->user()->id,
+    //         'product_id' => $request->input('product_id')
+    //     ]);
+
+    //     return view('buyer.wish');
+    // }
 
     public function cart(Request $request)
     {
+    // Mendapatkan data dari request
     $productId = $request->input('product_id');
+    $quantity = $request->input('quantity', 1); // Default quantity 1 jika tidak ada quantity di-request
 
-    // Logika untuk menambahkan produk ke keranjang (sesuai kebutuhan)
+    // Validasi bahwa product_id valid dan quantity positif
+    $validatedData = $request->validate([
+        'product_id' => 'required|exists:products,id',
+        'quantity' => 'required|integer|min:1',
+    ]);
 
+    // Cari produk berdasarkan ID
+    $product = Product::find($productId);
+
+    // Cek apakah produk ditemukan
+    if (!$product) {
+        return response()->json(['message' => 'Produk tidak ditemukan.'], 404);
+    }
+
+    // Cek apakah stok mencukupi
+    if ($product->stok < $quantity) {
+        return response()->json(['message' => 'Stok produk tidak mencukupi.'], 422);
+    }
+
+    // Logika untuk menambahkan produk ke keranjang
     $cartItem = new Cart([
-
         'product_id' => $productId,
+        'quantity' => $quantity,
         // tambahkan kolom lain yang diperlukan
     ]);
+
+    // Kurangkan stok produk
+    $product->stok -= $quantity;
+    $product->save();
 
     $cartItem->save();
 
     return response()->json(['message' => 'Produk berhasil ditambahkan ke keranjang.']);
-}
-}
+    }
 
+    //
+    // public function editUser($id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     return view('admin.edituser', compact('user'));
+    // }
 
+    // public function updateUser(Request $request, $id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     // Validate and update the user
+    //     $user->update($request->all());
+    //     return redirect()->route('admin.edituser')->with('success', 'User updated successfully');
+    // }
+
+    // public function editBuyer($id)
+    // {
+    //     $buyer = Buyer::findOrFail($id);
+    //     return view('admin.editbuyer', compact('buyer'));
+    // }
+
+    // public function updateBuyer(Request $request, $id)
+    // {
+    //     $buyer = Buyer::findOrFail($id);
+    //     // Validate and update the buyer
+    //     $buyer->update($request->all());
+    //     return redirect()->route('admin.buyers.index')->with('success', 'Buyer updated successfully');
+    // }
+
+}

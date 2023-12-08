@@ -30,7 +30,7 @@
 </style>
 @section('content')
 <div class="mt-4">
-    <a style="background-color: #9BABB8; color:#EEE3CB; margin-left:70px;" href="{{ route('products') }}" class="btn">
+    <a style="background-color: #9BABB8; color:#EEE3CB; margin-left:70px;" href="javascript:history.back()" class="btn">
         <ion-icon size="large" name="arrow-back-outline"></ion-icon>
     </a>
 </div>
@@ -64,7 +64,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div class="d-inline position-absolute start-50 translate-middle-x" style="margin-top: 30px;  ">
+                                        <div class="d-inline position-absolute start-50 translate-middle-x" style="margin-top: 23px;  ">
                                             <a style="color: #EEE3CB;" href=""><ion-icon size="large" name="heart-outline"></ion-icon></a>
                                             <a style="color: #EEE3CB;" href=""><ion-icon size="large" name="cart-outline"></ion-icon></a>
                                         </div>

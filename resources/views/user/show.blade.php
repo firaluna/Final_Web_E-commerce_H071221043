@@ -30,7 +30,7 @@
 </style>
 @section('content')
 <div class="mt-4">
-    <a style="background-color: #9BABB8; color:#EEE3CB; margin-left:70px;" href="{{ route('index') }}" class="btn">
+    <a style="background-color: #9BABB8; color:#EEE3CB; margin-left:70px;" href="javascript:history.back()" class="btn">
         <ion-icon size="large" name="arrow-back-outline"></ion-icon>
     </a>
 </div>

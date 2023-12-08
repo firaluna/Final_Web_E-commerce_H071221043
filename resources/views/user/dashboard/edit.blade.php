@@ -72,7 +72,12 @@
                         @endif
                     </div>
 
-                    <button style="background-color: #9BABB8; color:#EEE3CB;" type="submit" class="btn mt-4">Edit Product</button>
+                    <div>
+                        <button style="background-color: #9BABB8; color:#EEE3CB;" type="submit" class="btn mt-4">Edit Product</button>
+                        <a style="background-color: #9BABB8; color:#EEE3CB;" href="javascript:history.back()" class="btn">
+                            <ion-icon size="small" name="arrow-back-outline"></ion-icon>
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>

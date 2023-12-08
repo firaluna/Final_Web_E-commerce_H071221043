@@ -9,7 +9,7 @@
     .card-body{
         background-color: #9BABB8;
     }
-    
+
     .card-body a {
         text-decoration: none;
         color: #EEE3CB;
@@ -47,6 +47,17 @@
                                 <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px;" href="product/{{ $product->id }}/detail">{{ $product->nama }}</a>
                                 <p style="color: #EEE3CB">Price: Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                             </div>
+                            {{-- <div class="card-footer">
+                                <div class="d-inline">
+                                    <form action="">
+                                        <button  type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="heart-outline"></ion-icon></button>
+                                    </form>
+                                    <form action="{{ route('cart') }}">
+                                        <button onclick="addToCart({{ $product->id }})" type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="cart-outline"></ion-icon></button>
+                                    </form>
+
+                                </div>
+                            </div> --}}
                             <div class="card-footer">
                                 <div  class="d-inline">
                                     <a style="color: #BBAB8C" href=""><ion-icon size="large" name="heart-outline"></ion-icon></a>

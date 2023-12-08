@@ -89,7 +89,7 @@
                             <div class="card-footer">
                                 <div  class="d-inline">
                                     <a style="color: #BBAB8C" href=""><ion-icon size="large" name="heart-outline"></ion-icon></a>
-                                    <a style="color: #BBAB8C" href=""><ion-icon size="large" name="cart-outline"></ion-icon></a>
+                                    <a style="color: #BBAB8C" href="/login"><ion-icon size="large" name="cart-outline"></ion-icon></a>
                                 </div>
                             </div>
                         </center>

@@ -32,24 +32,14 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <ul class="navbar-nav me-auto">
+                        {{-- <ul class="navbar-nav me-auto">
                             <li class="nav-item pt-1">
                                 <a style="color: #BBAB8C" class="nav-link" href="/Listproduct">Products</a>
                             </li>
-                        </ul>
-
-                        {{-- <div class="input-bar search">
-                            <div class="input-bar-search" id="search-input">
-                                <input class="search-bar search-bar__desktop" placeholder="Cari Sofa" value="">
-                                <button class=" button  button--big button__primary  button__primary-ruparupa" style="width:52px;background-color:;color:;max-width:" type="button">
-                                <div class="search-bar__button"><img class="search-icon" src="https://assets.ruparupa.io/v3/static/homepage/desktop/icon/search.svg">
-                                </div>
-                            </button>
-                        </div>
-                    </div> --}}
+                        </ul> --}}
 
                         <form class="d-flex pt-1" role="search" action="/pencarian" method="GET">
-                            <input style="width: 600px;" class="form-control " type="search" name="jenis" placeholder="Search Product"
+                            <input style="width: 700px;" class="form-control " type="search" name="jenis" placeholder="Search Product"
                                 aria-label="Search">
                             <button class="btn " type="submit">
                                 <ion-icon size="large" style="color: #BBAB8C" name="search"></ion-icon>
@@ -68,7 +58,7 @@
                                 <a style="color: #BBAB8C" class="nav-link" href="/"><ion-icon size="large" name="heart-outline"></ion-icon></a>
                             </li>
                             <li class="nav-item">
-                                <a style="color: #BBAB8C" class="nav-link" href="/"><ion-icon size="large" name="cart-outline"></ion-icon></a>
+                                <a style="color: #BBAB8C" class="nav-link" href="/login"><ion-icon size="large" name="cart-outline"></ion-icon></a>
                             </li>
 
 

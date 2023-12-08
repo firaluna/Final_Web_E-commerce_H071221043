@@ -15,7 +15,7 @@
         height: 2px;
         /* Mengubah tinggi garis bawah sesuai preferensi Anda */
         width: 0;
-        background: #000000;
+        background: #EEE3CB;
         position: absolute;
         left: 0;
         bottom: -2px;
@@ -31,7 +31,7 @@
 @section('content')
     <div class="container mt-4">
         <div class="text-center">
-            <h1 class="mb-4 fw-bolder">Hasil Pencarian Produk</h1>
+            <h1 style="color: #BBAB8C;" class="mb-4 fw-bold">Hasil Pencarian Produk</h1>
             <hr class="my-4">
         </div>
 
@@ -42,9 +42,9 @@
                         <div class="card" style="height:100%">
                                 <img src="img/{{ $product->image }}" class="card-img-top" height="100%" />
                             <center>
-                                <div class="card-footer">
+                                <div style="background-color: #9BABB8;" class="card-footer">
                                     <div class="d-inline">
-                                        <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px;" href="product/{{ $product->id }}/detail">{{ $product->nama }}</a>
+                                        <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px; color:#EEE3CB;" href="product/{{ $product->id }}/detail">{{ $product->nama }}</a>
                                     </div>
                                 </div>
                             </center>
@@ -62,8 +62,16 @@
             @endif
         </div>
 
-        <div class="text-center mt-4 mb-4">
-            <a href="/product" class="btn btn-dark">Back</a>
+        {{-- <div class="mt-4">
+            <a style="background-color: #9BABB8; color:#EEE3CB; margin-left:70px;" href="{{ route('products') }}" class="btn">
+                <ion-icon size="large" name="arrow-back-outline"></ion-icon>
+            </a>
+        </div> --}}
+
+        <div class=" mt-4 mb-4">
+            <a style="background-color: #9BABB8; color:#EEE3CB;" href="javascript:history.back()" class="btn">
+                <ion-icon size="large" name="arrow-back-outline">
+            </a>
         </div>
     </div>
 @endsection

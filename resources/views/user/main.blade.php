@@ -30,11 +30,11 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <ul class="navbar-nav ">
+                    {{-- <ul class="navbar-nav ">
                         <li class="nav-item pt-1">
                             <a style="color: #BBAB8C" class="nav-link" href="/index">Products</a>
                         </li>
-                    </ul>
+                    </ul> --}}
 
                     <form class="d-flex pt-3 ps-3" role="search" action="/jenis" method="GET">
                         <input style="width: 750px;" class="form-control" type="search" name="jenis" placeholder="Search Product"

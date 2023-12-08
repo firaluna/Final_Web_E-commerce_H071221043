@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WishlistController;
+// use App\Http\Controllers\ProductController::wish;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,7 @@ Route::get('products', [ProductController::class, 'products'])->name('products')
 Route::get('produks', [ProductController::class, 'rproduk']);
 Route::get('Listproduct', [ProductController::class, 'Listproduct'])->name('Listproduct');
 Route::get('produk', [ProductController::class, 'produk'])->name('produk');
-Route::get('like', [ProductController::class, 'like']);
+// Route::get('like', [ProductController::class, 'like']);
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');;
 Route::get('index/create', [ProductController::class, 'create']);
 Route::post('product/store', [ProductController::class, 'store']);
@@ -48,6 +50,7 @@ Route::get('product/{id}/pdetail', [ProductController::class, 'pdetail']);
 Route::get('/jenis', [ProductController::class, 'jenis'])->name('jenis');
 Route::get('/search', [ProductController::class, 'search'])->name('search');
 Route::get('/pencarian', [ProductController::class, 'pencarian'])->name('pencarian');
+Route::Post('/wish', [WishlistController::class, 'wish'])->middleware('auth');
 
 Route::get('buyer', function() {
     return view('buyer.home', [

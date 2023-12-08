@@ -77,7 +77,7 @@
     <div style="margin-right: 20px; margin-left:20px;" class="row justify-content-center mt-4">
         @if ($products->count() > 0)
             @foreach ($products as $product)
-                <div class="col-md-4" style="height: 300px; margin-bottom:200px;">
+                <div class="col-md-4" style="height: 300px; margin-bottom:300px;">
                     <div class="card" style="height:100%">
                         <img src="img/{{ $product->image }}" class="card-img-top" height="100%" />
                         <center>
@@ -85,20 +85,34 @@
                                 <a style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:30px;" href="product/{{ $product->id }}/detail">{{ $product->nama }}</a>
                                 <p style="color: #EEE3CB">Price: Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                             </div>
+
                             <div class="card-footer">
-                                {{-- <div  class="d-inline">
+                                <div  class="d-inline">
+
+                                    <form action="/wish" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <button type="submit" style="color: #BBAB8C; border:none;"><ion-icon size="large" name="heart-outline"></ion-icon></button>
+                                    </form>
+                                    <form action="{{ route('cart') }}">
+                                        <button onclick="addToCart({{ $product->id }})" type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="cart-outline"></ion-icon></button>
+                                    </form>
+                                    <a style="color: #BBAB8C" href=""><ion-icon size="large" name="heart-outline"></ion-icon></a>
+                                    <a style="color: #BBAB8C" href=""><ion-icon size="large" name="cart-outline"></ion-icon></a>
+                                </div>
+                            </div>
+
+                            {{-- <div class="card-footer">
+                                <div class="d-inline">
                                     <form action="">
                                         <button  type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="heart-outline"></ion-icon></button>
                                     </form>
-                                </div> --}}
-
-                                <div class="d-inline">
-                                    <form action="">
+                                    <form action="{{ route('cart') }}">
                                         <button onclick="addToCart({{ $product->id }})" type="submit" style="color: #BBAB8C; border:none" href=""><ion-icon size="large" name="cart-outline"></ion-icon></button>
                                     </form>
 
                                 </div>
-                            </div>
+                            </div> --}}
                         </center>
                     </div>
                 </div>

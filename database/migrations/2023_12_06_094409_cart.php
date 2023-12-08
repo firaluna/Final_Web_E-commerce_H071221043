@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
-            $table->decimal('price', 8, 2);
             // tambahkan kolom lain yang diperlukan
             $table->timestamps();
 
